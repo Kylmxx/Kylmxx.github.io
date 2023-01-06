@@ -3734,7 +3734,7 @@ h1.page-title + .tag-cloud-list {
   width: 100%;
   height: 100%;
   position: fixed;
-  background: var(--anzhiyu-card-bg);
+  background: url("http://pic.kylmxx.top/img/6.jpeg");
   z-index: 1001;
   opacity: 1;
   -ms-filter: none;
