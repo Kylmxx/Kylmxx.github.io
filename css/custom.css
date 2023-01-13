@@ -2,3 +2,352 @@
     background: url(http://pic.kylmxx.top/img/tx2.jpg) no-repeat center center;
     background-size: cover;
   }
+  /* 文章页H1-H6图标样式效果 */
+/* 控制风车转动速度 4s那里可以自己调节快慢 */
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  -webkit-animation: ccc 4s linear infinite;
+  animation: ccc 4s linear infinite;
+}
+/* 控制风车转动方向 -1turn 为逆时针转动，1turn 为顺时针转动，相同数字部分记得统一修改 */
+@-webkit-keyframes ccc {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+@keyframes ccc {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+/* 设置风车颜色 */
+#content-inner.layout h1::before {
+  color: #ef50a8;
+  margin-left: -1.55rem;
+  font-size: 1.3rem;
+  margin-top: -0.23rem;
+}
+#content-inner.layout h2::before {
+  color: #fb7061;
+  margin-left: -1.35rem;
+  font-size: 1.1rem;
+  margin-top: -0.12rem;
+}
+#content-inner.layout h3::before {
+  color: #ffbf00;
+  margin-left: -1.22rem;
+  font-size: 0.95rem;
+  margin-top: -0.09rem;
+}
+#content-inner.layout h4::before {
+  color: #a9e000;
+  margin-left: -1.05rem;
+  font-size: 0.8rem;
+  margin-top: -0.09rem;
+}
+#content-inner.layout h5::before {
+  color: #57c850;
+  margin-left: -0.9rem;
+  font-size: 0.7rem;
+  margin-top: 0rem;
+}
+#content-inner.layout h6::before {
+  color: #5ec1e0;
+  margin-left: -0.9rem;
+  font-size: 0.66rem;
+  margin-top: 0rem;
+}
+/* s设置风车hover动效 6s那里可以自己调节快慢*/
+#content-inner.layout h1:hover,
+#content-inner.layout h2:hover,
+#content-inner.layout h3:hover,
+#content-inner.layout h4:hover,
+#content-inner.layout h5:hover,
+#content-inner.layout h6:hover {
+  color: var(--theme-color);
+}
+#content-inner.layout h1:hover::before,
+#content-inner.layout h2:hover::before,
+#content-inner.layout h3:hover::before,
+#content-inner.layout h4:hover::before,
+#content-inner.layout h5:hover::before,
+#content-inner.layout h6:hover::before {
+  color: var(--theme-color);
+  -webkit-animation: ccc 6s linear infinite;
+  animation: ccc 6s linear infinite;
+}
+
+/* 主页双栏 */
+#recent-posts {
+  margin-top: -1rem;
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+  #recent-posts > .recent-post-item {
+      margin-top: 1rem;
+      display: inline-block;
+      height: auto;
+      width: 49%
+  }
+
+      #recent-posts > .recent-post-item .post_cover {
+          width: 100%;
+          height: 200px
+      }
+
+          #recent-posts > .recent-post-item .post_cover img.post_bg {
+              width: 100%;
+              height: 100%
+          }
+
+      #recent-posts > .recent-post-item > .recent-post-info > .content {
+          display: none
+      }
+
+  #recent-posts > .recent-post-item {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column
+  }
+
+      #recent-posts > .recent-post-item .left_radius {
+          border-radius: 8px 8px 0 0
+      }
+
+      #recent-posts > .recent-post-item .right_radius {
+          border-radius: 8px 8px 0 0
+      }
+
+.recent-post-item {
+  height: auto !important
+}
+
+.recent-post-info {
+  padding: 0 40px;
+  margin-top: 1em;
+  width: 100% !important
+}
+
+#recent-posts > .recent-post-item > .recent-post-info > .article-title {
+  -webkit-line-clamp: 1;
+  margin-top: .3rem;
+  margin-bottom: .3rem;
+  color: var(--text-highlight-color);
+  font-size: 1.2em;
+  line-height: 1.4
+}
+
+#recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap {
+  margin-bottom: 1rem
+}
+
+@media screen and (max-width:768px) {
+  #recent-posts > .recent-post-item {
+      width: 100%
+  }
+}
+
+#recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap > .tags:before {
+  content: "\\A";
+  white-space: pre;
+}
+
+#recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap > .tags > .article-meta__separator {
+  display: none;
+}
+
+/* 首页文章 */
+/* 最新文章图标 */
+.newPost {
+  position: absolute;
+  bottom: 20px;
+  right:10px;
+  color: orange;
+  padding: 0 15px;
+}
+
+.recent-post-item, .card-widget, #post, #bbTimeList, #page {
+  border-radius: 6px;
+  outline: 2px solid var(--dark-grey);
+  transition: .3s;
+}
+
+.recent-post-item:hover,.card-widget:hover,.menus_item_child:hover,#post:hover,#bbTimeList:hover,#page:hover{
+  outline:2px solid var(--ichika-color);
+  transition:.3s;
+}
+
+.recent-post-item{
+  position:relative;
+}
+
+  .recent-post-item div, .recent-post-item a{
+      color: black !important;
+  }
+
+.post_cover{
+  position:relative;
+  height:250px!important;
+}
+
+.post-category,.post-tag{
+  position:absolute;
+  top:10px;
+  padding:0 8px;
+  background:rgba(100,100,100,0.8);
+  border-radius:10px;
+  transition:0.2s;
+}
+
+.post-category a,.post-tag a{
+  color:white!important;
+}
+
+.post-category{
+  left:10px;
+}
+
+.post-tag{
+  right:10px;
+}
+
+.post-category:hover {
+  background: var(--ichika-color);
+  box-shadow: 0 0 8px var(--ichika-color);
+  transition: 0.2s;
+}
+
+.post-tag:hover {
+  background: var(--ichika-hover-color);
+  box-shadow: 0 0 8px var(--ichika-hover-color);
+  transition: 0.2s;
+}
+
+.post-category a{
+  color:white;
+}
+
+.recent-post-info{
+  position:absolute;
+  bottom:0;
+  height:70px;
+  background:rgba(255,255,255,0.7);
+  transition:0.3s;
+}
+
+@media screen and (max-width:768px){
+  .recent-post-info{
+      padding:0 20px!important;
+  }
+}
+
+.recent-post-info >.article-title{
+  margin:10px 0!important;
+  font-weight:bold;
+}
+
+.recent-post-info >.article-meta-wrap{
+  margin:0!important;
+  color:rgb(100,100,100)!important;
+}
+
+.post-info-hover > .article-meta-wrap {
+  position:absolute;
+  bottom:10px;
+  color: rgb(50,50,50)!important;
+}
+
+.post-info-hover{
+  opacity:0;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:10;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:0 35px;
+  background:rgba(255,255,255,0.4);
+  transition:0.3s;
+}
+
+.recent-post-item:hover .post-info-hover{
+  opacity:1;
+  transition:0.3s;
+}
+
+.recent-post-item:hover .post_cover {
+  filter: blur(2px);
+  transition: 0.3s;
+}
+
+.recent-post-item:hover .recent-post-info {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.post-info-hover > a{
+  font-size:20px;
+  font-weight:bold;
+  color:black;
+  text-align:center;
+}
+
+.post-article-a{
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+
+#pagination{
+  border-radius:12px;
+}
+
+#pagination img{
+  filter:blur(4px);
+  transition:.3s;
+}
+
+#pagination div:hover img{
+  filter:blur(0px);
+  transition:.3s;
+}
+
+.relatedPosts-list > div {
+  border-radius: 12px;
+  height:150px!important;
+}
+
+.reward-button {
+  border-radius: 15px;
+  background: var(--ichika-color);
+  box-shadow: 0 0 2px var(--ichika-color);
+  transition:0.3s;
+}
+
+.reward-button:hover{
+  box-shadow: 0 0 5px #800080;
+  transition:0.3s;
+}
+
+
